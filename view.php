@@ -11,7 +11,7 @@ $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 // DBを操作するときの文字コードを設定
 $dbh->query('SET NAMES utf8');
 
-// データを更新する
+// データを取得する
 $sql = 'SELECT * FROM images';
 // SQL準備
 $stmt = $dbh->prepare($sql);
@@ -49,7 +49,7 @@ while (true) {
   <?php foreach($records as $record): ?>
 
     <img src="data:image/png;base64,<?= base64_encode($record['image']); ?>" >
-    
+
   <?php endforeach; ?>
 
 </body>
